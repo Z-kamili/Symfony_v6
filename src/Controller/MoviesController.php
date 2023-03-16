@@ -11,6 +11,7 @@ class MoviesController extends AbstractController
     /**
      * @Route("/movies", name="app_movies")
      */
+    #[Route("/movies", name:"app_movies")]
     public function index(): JsonResponse
     {
         return $this->json([
