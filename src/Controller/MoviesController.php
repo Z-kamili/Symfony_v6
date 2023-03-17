@@ -12,7 +12,7 @@ class MoviesController extends AbstractController
     /**
      * @Route("/movies", name="app_movies")
      */
-    #[Route("/movies", name:"app_movies")]
+    #[Route("/movies/{name}", name:"movies")]
     public function index(): JsonResponse
     {
         return $this->json([
@@ -26,10 +26,10 @@ class MoviesController extends AbstractController
      * 
      * @Route("/old",name="old")
      */
-    public function olMethod():Response {
-        return $this->json([
-             'message' => 'Old Method.',
-             'path'=> 'src/Controller/MoviesController.php',
-        ]);
-    }
+    // public function olMethod():Response {
+    //     return $this->json([
+    //          'message' => 'Old Method.',
+    //          'path'=> 'src/Controller/MoviesController.php',
+    //     ]);
+    // }
 }
