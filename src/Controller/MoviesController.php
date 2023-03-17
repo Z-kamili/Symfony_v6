@@ -9,8 +9,9 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class MoviesController extends AbstractController
 {
+  
     /**
-     * @Route("/movies/{name}", name="movies",methods:['GET','HEAD'])
+     * @Route("/movies/{name}", name="movies",defaults={'name'=> null},methods={'GET','HEAD'})
      */
     public function index($name): JsonResponse
     {
@@ -29,10 +30,12 @@ class MoviesController extends AbstractController
      * 
      * @Route("/old/test",name="old")
      */
-    public function olMethod():Response {
+    public function olMethod():Response 
+    {
         return $this->json([
              'message' => 'Old Method.',
              'path'=> 'src/Controller/MoviesController.php',
         ]);
     }
+
 }
